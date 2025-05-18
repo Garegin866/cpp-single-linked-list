@@ -31,6 +31,13 @@ This project is written from scratch for learning and practicing custom containe
 - ✅ Copy constructor and copy assignment:
     - Copy assignment provides **strong exception safety**
     - If an exception occurs during assignment, the original list remains unchanged
+- ✅ List modification methods:
+    - `PopFront`: removes the first element (noexcept)
+    - `InsertAfter`: inserts an element after the given iterator (strong exception safety)
+    - `EraseAfter`: removes the element after the given iterator (noexcept)
+- ✅ Special iterators:
+    - `before_begin()` and `cbefore_begin()` return iterators to the fictitious position before the list’s first element
+    - These iterators are used with `InsertAfter` and `EraseAfter` at the beginning of the list
 
 ## Example Usage
 
