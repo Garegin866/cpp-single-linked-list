@@ -14,7 +14,23 @@ This project is written from scratch for learning and practicing custom containe
   - `GetSize`, `IsEmpty`  
   - Iteration with range-based for loops  
 - Fully tested with custom test cases  
-- Exception safety is considered for copy operations  
+- Exception safety is considered for copy operations 
+
+## Supported Features
+
+- ✅ Custom singly linked list implementation
+- ✅ Iterator support (compatible with range-based for loops and STL algorithms)
+- ✅ Comparison operators:
+    - `==`, `!=`, `<`, `>`, `<=`, `>=`
+    - Implemented using `std::equal` and `std::lexicographical_compare`
+- ✅ Swap operations:
+    - Member method `swap`
+    - Overload of template `std::swap`
+- ✅ `std::initializer_list` constructor:
+    - Enables list creation like: `List l = {1, 2, 3};`
+- ✅ Copy constructor and copy assignment:
+    - Copy assignment provides **strong exception safety**
+    - If an exception occurs during assignment, the original list remains unchanged
 
 ## Example Usage
 
