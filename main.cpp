@@ -67,6 +67,7 @@ class SingleLinkedList {
             return current_node_ != rhs.current_node_;
         }
         BasicIterator& operator++() noexcept {
+            assert(current_node_ != nullptr);
             current_node_ = current_node_->next_node;
             return *this;
         }
@@ -76,10 +77,12 @@ class SingleLinkedList {
             return copy;
         }
         [[nodiscard]] reference operator*() const noexcept {
+            assert(current_node_ != nullptr);
             return current_node_->value;
         }
 
         [[nodiscard]] pointer operator->() const noexcept {
+            assert(current_node_ != nullptr);
             return &current_node_->value;
         }
 
@@ -261,12 +264,12 @@ bool operator<(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& 
 
 template <typename Type>
 bool operator<=(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs) {
-    return (lhs < rhs || lhs == rhs);
+    return !(lhs > rhs);
 }
 
 template <typename Type>
 bool operator>(const SingleLinkedList<Type>& lhs, const SingleLinkedList<Type>& rhs) {
-    return !(lhs <= rhs);
+    return rhs < lhs;
 }
 
 template <typename Type>
